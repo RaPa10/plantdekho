@@ -1,0 +1,35 @@
+# General Project Rules
+- Use TypeScript for all components, hooks, and services.
+- Use Tailwind CSS for styling instead of inline styles or external CSS files.
+- Follow Next.js App Router structure (keep components inside `src/components` and API logic in `src/services`).
+
+# Component Rules
+- Component files should be PascalCase (e.g., `Navbar.tsx`, `UploadImage.tsx`).
+- Keep all reusable components in the `components/` folder.
+- Avoid deeply nested components (max 2 levels inside `components/`).
+
+# API & Service Rules
+- All API requests should be handled inside `src/services/`.
+- Use `async/await` for API calls, and wrap them in try/catch blocks.
+- Separate business logic from UI components.
+
+# State Management (Next.js Specific)
+- Use **React Hooks (`useState`, `useEffect`, `useReducer`)** only when needed in Client Components.
+- **Prefer Server Components** for fetching data whenever possible.
+- Place all reusable hooks in `src/hooks/`.
+- Use **React Query (or SWR)** for caching and automatic refetching where applicable.
+
+# Code Formatting
+- Follow Prettier formatting rules.
+- Maintain a consistent import order (external libraries first, internal modules next).
+- Keep functions short and modular (max 30 lines per function).
+
+# Performance & Optimization
+- Use lazy loading for heavy components.
+- Optimize images before rendering.
+- Fetch only necessary data from APIs to improve performance.
+
+# Security & Env Variables
+- Store API keys and sensitive data in `.env` (never hardcode in code).
+- Use environment variables properly (`NEXT_PUBLIC_` for client-side access).
+- Do not expose backend API keys in the frontend.
